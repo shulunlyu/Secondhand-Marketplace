@@ -38,13 +38,14 @@ class CategoryDetail(APIView):
         serializer = CategorySerializer(category)
         return Response(serializer.data)
 
-# @api_view(['POST'])
-# def search(request):
-#     query = request.data.get('query', '')
+@api_view(['POST'])
 
-#     if query:
-#         products = Product.objects.filter(Q(name__icontains=query) | Q(description__icontains=query))
-#         serializer = ProductSerializer(products, many=True)
-#         return Response(serializer.data)
-#     else:
-#         return Response({"products": []})
+def search(request):
+    query = request.data.get('query', '')
+    # Q means queries in Django
+    if query:
+        products = Product.objects.filter(Q(name__icontains=query) | Q(description__icontains=query))
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data)
+    else:
+        return Response({"products": []})
