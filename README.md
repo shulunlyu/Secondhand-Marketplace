@@ -14,5 +14,5 @@ This is a dynamic trading website built using Python in Django Web Framework and
 ## Technology Stack: 
 Python, Django Web Framework, Vue.js(bulma), Stripe API, SQLite, Git
 
-## Arthur:
+## Author:
 Shulun Lyu (lyu.shul@northeastern.edu)
